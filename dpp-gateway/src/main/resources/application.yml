@@ -1,0 +1,10 @@
+server:
+  port: 9005
+
+spring:
+  application:
+    name: dpp-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
