@@ -4,7 +4,20 @@ server:
 spring:
   application:
     name: dpp-gateway
+
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848
+        server-addr: 101.42.54.40
+        port: 8848
+        username: nacos
+        password: ${n.d.password}
+    gateway:
+      routes:
+        - id: dpp-gateway
+          uri: lb://dpp-auth
+          predicates:
+            - Path=/auth/**
+            # 添加 StripPrefix 过滤器，去除路径中的 /auth 前缀
+          filters:
+            - StripPrefix=1
