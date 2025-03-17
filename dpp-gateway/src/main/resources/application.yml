@@ -8,10 +8,8 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 101.42.54.40
+        server-addr: localhost
         port: 8848
-        username: nacos
-        password: ${n.d.password}
     gateway:
       routes:
         - id: dpp-gateway

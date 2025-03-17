@@ -5,17 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ccdc911d-7a7f-4ab9-9ecd-7e4ef9fcaa48" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MarsCodeWorkspaceAppSettings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dpp-auth/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dpp-auth/src/main/java/com/github/solanej/AuthApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dpp-auth/src/main/java/com/github/solanej/config/AppConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dpp-auth/src/main/java/com/github/solanej/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dpp-auth/src/main/java/com/github/solanej/service/AuthService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dpp-auth/src/main/java/com/github/solanej/service/AuthServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dpp-auth/src/main/resources/application.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dpp-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dpp-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dpp-gateway/src/main/java/com/github/solanej/GatewayApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dpp-gateway/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dpp-gateway/src/main/resources/banner.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dpp-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dpp-gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +48,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -60,33 +60,33 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JAR 应用程序.dpp-gateway-1.0-SNAPSHOT.jar.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestGetEnv.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestGetEnv.getEnvs.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestSendRequest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestTokenUtils.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.dpp-backend [clean,package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.dpp-backend [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.dpp-gateway [clean,package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.dpp-gateway [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.dpp-gateway [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.dpp-gateway [package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/projects/dpp-backend/dpp-auth/src/main/java/com/github/solanej&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.33448276&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;应用程序.AuthApplication.executor&quot;: &quot;Run&quot;,
-    &quot;应用程序.Demo.executor&quot;: &quot;Run&quot;,
-    &quot;应用程序.GatewayApplication.executor&quot;: &quot;Run&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JAR 应用程序.dpp-gateway-1.0-SNAPSHOT.jar.executor": "Run",
+    "JUnit.TestGetEnv.executor": "Run",
+    "JUnit.TestGetEnv.getEnvs.executor": "Run",
+    "JUnit.TestSendRequest.executor": "Run",
+    "JUnit.TestTokenUtils.executor": "Run",
+    "Maven.dpp-backend [clean,package].executor": "Run",
+    "Maven.dpp-backend [clean].executor": "Run",
+    "Maven.dpp-gateway [clean,package].executor": "Run",
+    "Maven.dpp-gateway [clean].executor": "Run",
+    "Maven.dpp-gateway [compile].executor": "Run",
+    "Maven.dpp-gateway [package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "nacos",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/projects/dpp-backend/dpp-common/pom.xml",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.33448276",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "应用程序.AuthApplication.executor": "Run",
+    "应用程序.Demo.executor": "Run",
+    "应用程序.GatewayApplication.executor": "Debug"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\projects\dpp-backend\dpp-auth\src\main\java\com\github\solanej" />
@@ -100,7 +100,7 @@
       <recent name="com.github.solanej" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.AuthApplication">
+  <component name="RunManager" selected="应用程序.GatewayApplication">
     <configuration name="AuthApplication" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.github.solanej.AuthApplication" />
       <module name="dpp-auth" />
@@ -133,8 +133,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.AuthApplication" />
         <item itemvalue="应用程序.GatewayApplication" />
+        <item itemvalue="应用程序.AuthApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -159,5 +159,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
