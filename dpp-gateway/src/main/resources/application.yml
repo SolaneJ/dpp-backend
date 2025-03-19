@@ -10,12 +10,11 @@ spring:
       discovery:
         server-addr: localhost
         port: 8848
-    gateway:
-      routes:
-        - id: dpp-gateway
-          uri: lb://dpp-auth
-          predicates:
-            - Path=/auth/**
-            # 添加 StripPrefix 过滤器，去除路径中的 /auth 前缀
-          filters:
-            - StripPrefix=1
+#    gateway:
+#      routes:
+#        - id: dpp-auth
+#          uri: lb://dpp-auth
+#          predicates:
+#            - Path=/auth/**
+#          filters:
+#            - StripPrefix=1
