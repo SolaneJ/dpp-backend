@@ -1,6 +1,11 @@
 package com.github.solanej.util;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
 
 import javax.crypto.SecretKey;
 import java.time.Instant;
@@ -15,7 +20,8 @@ import java.util.Map;
  */
 public class TokenUtils {
 
-    private static final SecretKey key = Jwts.SIG.HS512.key().build();
+    private static final String secret = "your256bitsecretwhichshouldbebase64encodedyufvghkytidcyghk";
+    private static final SecretKey key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(secret));
 
     // 构建token
     public static String createToken(Map<String, Object> userData) {
@@ -24,14 +30,31 @@ public class TokenUtils {
                 // 设置签发时间
                 .issuedAt(Date.from(Instant.now()))
                 // 设置签名
-                .signWith(key, Jwts.SIG.HS512)
+                .signWith(key)
                 // 设置过期时间expiration
                 .expiration(Date.from(Instant.now().plus(1, ChronoUnit.MINUTES)))
                 .compact();
     }
 
-    // todo 解析token
-    public static Map<String, Object> parseToken(String token) {
+    // 验证token
+    public static boolean validateToken(String token) {
+        try {
+            Jws<Claims> jwsClaims = Jwts.parser()
+                    .verifyWith(key)
+                    .build()
+                    .parseSignedClaims(token);
+        } catch (ExpiredJwtException e) {
+            // token过期
+            return false;
+        } catch (Exception e) {
+            // token无效
+            return false;
+        }
+        return true;
+    }
+
+    // 解析token
+    public static Claims parseToken(String token) {
         return Jwts.parser()
                 .verifyWith(key)
                 .build()
