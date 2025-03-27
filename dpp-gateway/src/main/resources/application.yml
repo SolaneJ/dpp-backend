@@ -1,5 +1,5 @@
 server:
-  port: 9005
+  port: 8080
 
 spring:
   application:
@@ -8,13 +8,8 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost
-        port: 8848
-#    gateway:
-#      routes:
-#        - id: dpp-auth
-#          uri: lb://dpp-auth
-#          predicates:
-#            - Path=/auth/**
-#          filters:
-#            - StripPrefix=1
+        server-addr: localhost:8848
+
+  config:
+    import:
+      - 'classpath:application-route.yml'

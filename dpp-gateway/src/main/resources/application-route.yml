@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: dpp-auth
+          uri: lb://dpp-auth
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
