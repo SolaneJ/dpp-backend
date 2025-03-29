@@ -1,8 +1,10 @@
 package com.github.solanej.config;
 
+import com.github.solanej.filter.RequestHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
+import org.springframework.security.config.web.server.SecurityWebFiltersOrder;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 
@@ -26,8 +28,10 @@ public class SecurityConfig {
         return http.authorizeExchange(authorizeExchangeSpec -> {
             authorizeExchangeSpec
 //                    .pathMatchers("/login", "/register").permitAll()
-                    .anyExchange().permitAll()  // 所有URL都放行
+                    .anyExchange().permitAll()
             ;
-        }).build();
+        })
+                .addFilterBefore(new RequestHandler(), SecurityWebFiltersOrder.AUTHENTICATION)
+                .build();
     }
 }

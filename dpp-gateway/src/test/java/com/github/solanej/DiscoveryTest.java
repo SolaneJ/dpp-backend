@@ -1,5 +1,6 @@
 package com.github.solanej;
 
+import lombok.extern.java.Log;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,6 +11,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
  *
  * @since 2025/3/19 08:21
  */
+@Log
 @SpringBootTest
 public class DiscoveryTest {
 
@@ -19,7 +21,7 @@ public class DiscoveryTest {
     @Test
     void getInstances() {
         for (String service : discoveryClient.getServices()) {
-            System.out.println(service);
+            log.info(service);
         }
     }
 }

@@ -9,29 +9,29 @@ public class ResponseData {
 
     private String message;
 
-    private short code;
+    private int code;
 
     private Object data;
 
     public ResponseData() {
     }
 
-    public ResponseData(String message, short code, Object data) {
+    public ResponseData(String message, int code, Object data) {
         this.message = message;
         this.code = code;
         this.data = data;
     }
 
     public static ResponseData success(Object data) {
-        return new ResponseData("success", (short) 200, data);
+        return new ResponseData("success", 200, data);
     }
 
-    public static ResponseData failed(String message) {
-        return new ResponseData(message, (short) 500, null);
+    public static ResponseData failed(String message, int code) {
+        return new ResponseData(message, code, null);
     }
 
-    public static ResponseData error() {
-        return new ResponseData("error", (short) 500, null);
+    public static ResponseData error(int code) {
+        return new ResponseData("error", code, null);
     }
 
     public String getMessage() {
@@ -42,11 +42,11 @@ public class ResponseData {
         this.message = message;
     }
 
-    public short getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(short code) {
+    public void setCode(int code) {
         this.code = code;
     }
 

@@ -1,9 +1,6 @@
 package com.github.solanej.filter;
 
-import com.alibaba.csp.sentinel.adapter.gateway.sc.SentinelGatewayFilter;
 import lombok.extern.java.Log;
-import org.springframework.cloud.gateway.filter.GlobalFilter;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilter;
@@ -11,7 +8,7 @@ import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
 
 /**
- * RequestHandler
+ * 请求拦截器
  *
  * @since 2025/3/25 19:01
  */
@@ -24,13 +21,7 @@ public class RequestHandler implements WebFilter {
      */
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
-        // 检查是否有 Authorization 头
-//        if (!exchange.getRequest().getHeaders().containsKey("Authorization")) {
-//            ServerHttpResponse response = exchange.getResponse();
-//            response.setStatusCode(HttpStatus.UNAUTHORIZED);
-//            return response.setComplete();
-//        }
-        log.info(exchange.getRequest().getURI().toString());
+        // Todo 验证token，如果token不合法，返回401
         return chain.filter(exchange);
     }
 }

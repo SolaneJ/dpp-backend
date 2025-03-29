@@ -10,6 +10,11 @@ spring:
       discovery:
         server-addr: localhost:8848
 
+  # 引入外部配置文件
   config:
     import:
       - 'classpath:application-route.yml'
+  # 配置环境
+  profiles:
+    active:
+      - dev
