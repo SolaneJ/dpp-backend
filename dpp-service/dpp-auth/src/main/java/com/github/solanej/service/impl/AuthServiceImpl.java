@@ -47,6 +47,9 @@ public class AuthServiceImpl implements AuthService {
                 "https://api.weixin.qq.com/sns/jscode2session?appid=" + appid + "&secret=" + appsecret + "&js_code=" + wechatLoginRequestVo.code() + "&grant_type=authorization_code",
                 WeChatLoginResponseVo.class,
                 new HashMap<>());
-        return ResponseData.success(1);
+
+        // TODO : 查询数据库，判断用户是否存在，先查询Redis缓存用户信息，若不存在则查询数据库
+
+        return ResponseData.success(data);
     }
 }
