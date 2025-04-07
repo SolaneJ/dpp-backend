@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.github.solanej</groupId>
-        <artifactId>dpp-backend</artifactId>
+        <artifactId>dpp-service</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
@@ -18,21 +18,34 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.github.solanej</groupId>
-            <artifactId>dpp-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
         <!-- nacos 服务发现 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
+        <!-- spring web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- mybatis 半orm框架 -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- mysql 驱动 -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+        </dependency>
+
+        <!-- hutool 工具包 -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
         </dependency>
     </dependencies>
 </project>

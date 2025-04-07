@@ -19,11 +19,10 @@ public class LoadBalancedConfig {
      * 而RestTemplate是一个阻塞的客户端，它是基于Servlet的，它的请求是同步的，也就是说发送一个请求后，会一直等待响应。
      * <p>
      * Spring-gateway中使用了Netty网络框架，是基于WebFlux，对标的是SpringMVC的一个特性，所以官方推荐使用WebClient。
-     *
-     * @deprecated
      */
     @Bean
     @LoadBalanced
+    @Deprecated
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }

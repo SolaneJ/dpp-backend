@@ -1,0 +1,17 @@
+server:
+  port: 9006
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost
+        port: ${server.port}
+  application:
+    name: dpp-auth
+
+  datasource:
+    url: jdbc:mysql://101.42.54.40:3306/dpp?useLocalSessionState=true
+    username: rj14
+    password: ${MYSQL_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver

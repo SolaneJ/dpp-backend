@@ -12,7 +12,7 @@
     <modules>
         <module>dpp-common</module>
         <module>dpp-gateway</module>
-        <module>dpp-auth</module>
+        <module>dpp-service</module>
     </modules>
 
     <properties>
@@ -23,6 +23,9 @@
         <spring-boot.version>3.3.7</spring-boot.version>
         <spring-cloud.version>2023.0.3</spring-cloud.version>
         <spring-cloud-alibaba.version>2023.0.3.2</spring-cloud-alibaba.version>
+        <mybatis-spring-boot.version>3.0.4</mybatis-spring-boot.version>
+        <mysql-connector.version>9.2.0</mysql-connector.version>
+        <hutool-all.version>5.8.36</hutool-all.version>
     </properties>
 
     <!-- 镜像源配置 -->
@@ -72,6 +75,27 @@
                 <version>${lombok.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- mybatis 依赖 -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot.version}</version>
+            </dependency>
+
+            <!-- mysql 依赖 -->
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>${mysql-connector.version}</version>
+            </dependency>
+
+            <!-- hutool 依赖 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

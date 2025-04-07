@@ -25,12 +25,14 @@ public class SecurityConfig {
      */
     @Bean
     public SecurityWebFilterChain filterChain(ServerHttpSecurity http) {
-        return http.authorizeExchange(authorizeExchangeSpec -> {
-            authorizeExchangeSpec
+        return http
+                .csrf(ServerHttpSecurity.CsrfSpec::disable)
+                .authorizeExchange(authorizeExchangeSpec -> {
+                    authorizeExchangeSpec
 //                    .pathMatchers("/login", "/register").permitAll()
-                    .anyExchange().permitAll()
-            ;
-        })
+                            .anyExchange().permitAll()
+                    ;
+                })
                 .addFilterBefore(new RequestHandler(), SecurityWebFiltersOrder.AUTHENTICATION)
                 .build();
     }
