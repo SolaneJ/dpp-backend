@@ -29,7 +29,7 @@ public class SecurityConfig {
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .authorizeExchange(authorizeExchangeSpec -> {
                     authorizeExchangeSpec
-//                    .pathMatchers("/login", "/register").permitAll()
+//                            .pathMatchers("/auth/wxLogin").permitAll()
                             .anyExchange().permitAll()
                     ;
                 })
