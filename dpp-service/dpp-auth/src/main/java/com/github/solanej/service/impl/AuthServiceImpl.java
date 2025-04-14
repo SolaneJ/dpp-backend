@@ -4,7 +4,6 @@ import com.github.solanej.mapper.UserMapper;
 import com.github.solanej.service.AuthService;
 import com.github.solanej.util.TokenUtils;
 import com.github.solanej.view.ResponseData;
-import com.github.solanej.vo.LoginRequestVo;
 import com.github.solanej.vo.WeChatLoginRequestVo;
 import com.github.solanej.vo.WeChatLoginResponseVo;
 import lombok.extern.slf4j.Slf4j;
@@ -41,11 +40,6 @@ public class AuthServiceImpl implements AuthService {
 
     @Value("${WX_MINIPROGRAM_SECRET}")
     private String appsecret;
-
-    @Deprecated
-    public ResponseData login(LoginRequestVo loginRequestVo) {
-        return ResponseData.success(userMapper.login(loginRequestVo));
-    }
 
     @Override
     public ResponseData wxLogin(WeChatLoginRequestVo wechatLoginRequestVo) {
