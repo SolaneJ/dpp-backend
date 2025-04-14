@@ -18,18 +18,6 @@
     </properties>
 
     <dependencies>
-        <!-- nacos 服务发现 -->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-
-        <!-- spring web -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
         <!-- mybatis 半orm框架 -->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>

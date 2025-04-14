@@ -32,14 +32,17 @@ public class AuthController {
 
     /**
      * 注册
-     *
-     * @return
      */
     @RequestMapping("/register")
     public ResponseData register(@RequestBody String jsonStr) {
         return null;
     }
 
+    /**
+     * 微信小程序 登录接口
+     *
+     * @param wechatLoginRequestVo 携带用于请求wx.code2session接口的{code}
+     */
     @RequestMapping("/wxLogin")
     public ResponseData wxLogin(@RequestBody WeChatLoginRequestVo wechatLoginRequestVo) {
         return authService.wxLogin(wechatLoginRequestVo);
