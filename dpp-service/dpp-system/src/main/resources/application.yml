@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: dpp-system
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost
+        port: ${server.port}
+
+server:
+  port: 9008
+

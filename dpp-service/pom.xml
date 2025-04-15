@@ -16,6 +16,7 @@
     <modules>
         <module>dpp-auth</module>
         <module>dpp-order</module>
+        <module>dpp-system</module>
     </modules>
 
     <properties>

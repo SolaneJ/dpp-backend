@@ -2,7 +2,7 @@ package com.github.solanej.service.impl;
 
 import com.github.solanej.mapper.UserMapper;
 import com.github.solanej.service.AuthService;
-import com.github.solanej.util.TokenUtils;
+import com.github.solanej.utils.TokenUtil;
 import com.github.solanej.view.ResponseData;
 import com.github.solanej.vo.WeChatLoginRequestVo;
 import com.github.solanej.vo.WeChatLoginResponseVo;
@@ -77,7 +77,7 @@ public class AuthServiceImpl implements AuthService {
         final Map<String, Object> userData = Map.of("openid", openid);
 
         // 生成 token
-        final String token = TokenUtils.createToken(userData);
+        final String token = TokenUtil.createToken(userData);
 
         // 执行添加数据库的操作
         userMapper.insertUserWithOpenId(openid);

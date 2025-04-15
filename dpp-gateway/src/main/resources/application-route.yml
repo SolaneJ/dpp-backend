@@ -8,3 +8,9 @@ spring:
             - Path=/auth/**
           filters:
             - StripPrefix=1
+        - id: dpp-system
+          uri: lb://dpp-system
+          predicates:
+            - Path=/system/**
+          filters:
+            - StripPrefix=1

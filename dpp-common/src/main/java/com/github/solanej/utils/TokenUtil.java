@@ -1,4 +1,4 @@
-package com.github.solanej.util;
+package com.github.solanej.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -18,7 +18,7 @@ import java.util.Map;
  *
  * @since 2025/3/12 08:43
  */
-public class TokenUtils {
+public class TokenUtil {
 
     private static final String secret = "your256bitsecretwhichshouldbebase64encodedyufvghkytidcyghk";
     private static final SecretKey key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(secret));
@@ -32,7 +32,7 @@ public class TokenUtils {
                 // 设置签名
                 .signWith(key)
                 // 设置过期时间expiration
-                .expiration(Date.from(Instant.now().plus(1, ChronoUnit.MINUTES)))
+                .expiration(Date.from(Instant.now().plus(1, ChronoUnit.DAYS)))
                 .compact();
     }
 
