@@ -1,6 +1,7 @@
 # dpp-backend
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=000000&vCenter=true&repeat=false&width=435&lines=The+five+boxing+wizards+jump+quickly)](https://git.io/typing-svg)
+
 ![GitHub License](https://img.shields.io/github/license/solanej/dpp-backend)
 ![GitHub last commit](https://img.shields.io/github/last-commit/solanej/dpp-backend)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/solanej/dpp-backend)
