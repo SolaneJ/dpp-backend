@@ -10,5 +10,9 @@ import org.springframework.web.multipart.MultipartFile;
  */
 public interface UserProfileService {
 
+    // 上传头像
     ResponseData uploadAvatar(String openid, MultipartFile file);
+
+    // 获取用户信息
+    ResponseData getUserProfile(String openid);
 }

@@ -1,5 +1,6 @@
 package com.github.solanej.dao;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public record DppUser(
@@ -8,6 +9,7 @@ public record DppUser(
         String dUsername,
         String dPassword,
         String dSex,
+        Date dBirth,
         String dEmail,
         String dPhone,
         Timestamp dCreateTime,

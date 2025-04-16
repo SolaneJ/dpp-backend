@@ -23,13 +23,13 @@ public class UserProfileController {
      * @param file 前端通过form-data传递的文件
      * @return 头像地址url
      */
-    @PutMapping("/update_avatar")
+    @PutMapping("/uploadAvatar")
     public ResponseData uploadAvatar(@RequestHeader("X-User-Id") String openid, @RequestParam("file") MultipartFile file) {
         return userProfileService.uploadAvatar(openid, file);
     }
 
-    @RequestMapping("/test")
-    public ResponseData test() {
-        return ResponseData.success("test");
+    @GetMapping("/getUserProfile")
+    public ResponseData getUserProfile(@RequestHeader("X-User-Id") String openid) {
+        return userProfileService.getUserProfile(openid);
     }
 }
