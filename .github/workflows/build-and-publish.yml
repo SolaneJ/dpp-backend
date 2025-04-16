@@ -8,27 +8,53 @@ on:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
     steps:
       # 检出代码
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # 设置 Java 环境
       - name: Set up JDK
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'corretto'
           java-version: '21' # 根据项目需要调整 Java 版本
+          cache: 'maven'
+
+      # 缓存 Maven 依赖
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
+
+      - name: Configure Maven settings
+        run: |
+          mkdir -p ~/.m2
+          cat > ~/.m2/settings.xml <<EOF
+          <settings>
+            <servers>
+              <server>
+                <id>github</id>
+                <username>${{ github.actor }}</username>
+                <password>${{ secrets.GITHUB_TOKEN }}</password>
+              </server>
+            </servers>
+          </settings>
+          EOF
 
       # 构建项目并打包 JAR 文件
       - name: Build and package
         run: |
-          mvnw clean package -DskipTests
+          mvn clean package -DskipTests --batch-mode
 
       # 发布 JAR 文件到 GitHub Packages
-      - name: Publish JARs to GitHub Packages
-        run: |
-          mvnw deploy -DskipTests
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Publish JARs to GitHub Packages
+#        run: |
+#          mvn deploy -DskipTests --batch-mode
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
