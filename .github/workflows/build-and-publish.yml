@@ -24,11 +24,11 @@ jobs:
       # 构建项目并打包 JAR 文件
       - name: Build and package
         run: |
-          ./mvnw clean package -DskipTests
+          mvnw clean package -DskipTests
 
       # 发布 JAR 文件到 GitHub Packages
       - name: Publish JARs to GitHub Packages
         run: |
-          ./mvnw deploy -DskipTests
+          mvnw deploy -DskipTests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
