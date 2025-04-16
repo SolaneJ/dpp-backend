@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.github.solanej.dao.UserDao">
+    <update id="updateUserProfile" parameterType="com.github.solanej.vo.UserProfile">
+        UPDATE dpp_user
+        <set>
+            <if test="d_username != null">
+                d_username = #{userProfile.d_username},
+            </if>
+            <if test="d_sex != null">
+                d_sex = #{userProfile.d_sex}
+            </if>
+            <if test="d_birth != null">
+                d_birth = #{userProfile.d_birth},
+            </if>
+            <if test="d_phone != null">
+                d_phone = #{userProfile.d_phone},
+            </if>
+            <if test="d_avatar != null">
+                d_avatar = #{userProfile.d_avatar},
+            </if>
+            <if test="d_remark != null">
+                d_remark = #{userProfile.d_remark},
+            </if>
+        </set>
+        WHERE d_openid = #{openid}
+    </update>
+</mapper>

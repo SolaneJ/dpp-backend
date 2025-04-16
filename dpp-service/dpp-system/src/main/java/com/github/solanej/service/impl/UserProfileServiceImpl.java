@@ -84,6 +84,11 @@ public class UserProfileServiceImpl implements UserProfileService {
     }
 
     @Override
+    public ResponseData updateUserProfile(String openid, UserProfile userProfile) {
+        return ResponseData.success(123);
+    }
+
+    @Override
     public ResponseData getUserProfile(String openid) {
         final DppUser user = userDao.getUserProfileByOpenId(openid);
 
