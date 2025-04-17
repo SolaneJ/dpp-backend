@@ -3,7 +3,6 @@ package com.github.solanej.config;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 
 /**
@@ -12,7 +11,7 @@ import org.springframework.web.reactive.function.client.WebClient;
  * @since 2025/3/13 18:51
  */
 @Configuration
-public class LoadBalancedConfig {
+public class LoadBalancedConfiguration {
 
     /**
      * 在Netty框架中，WebClient是一个非阻塞、响应式的客户端，它支持异步和事件驱动的方式来处理请求。
@@ -20,12 +19,6 @@ public class LoadBalancedConfig {
      * <p>
      * Spring-gateway中使用了Netty网络框架，是基于WebFlux，对标的是SpringMVC的一个特性，所以官方推荐使用WebClient。
      */
-    @Bean
-    @LoadBalanced
-    @Deprecated
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
 
     @Bean
     @LoadBalanced
