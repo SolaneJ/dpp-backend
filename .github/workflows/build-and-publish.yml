@@ -3,7 +3,7 @@ name: Build and Publish JARs
 on:
   push:
     branches:
-      - master
+      - dev
 
 jobs:
   build-and-publish:
@@ -53,8 +53,8 @@ jobs:
           mvn clean package -DskipTests --batch-mode
 
       # 发布 JAR 文件到 GitHub Packages
-#      - name: Publish JARs to GitHub Packages
-#        run: |
-#          mvn deploy -DskipTests --batch-mode
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish JARs to GitHub Packages
+        run: |
+          mvn deploy -DskipTests --batch-mode
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

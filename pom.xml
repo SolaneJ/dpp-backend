@@ -29,18 +29,6 @@
         <mapstruct.version>1.6.2</mapstruct.version>
     </properties>
 
-    <!-- 镜像源配置 -->
-    <repositories>
-        <repository>
-            <id>aliyun-central</id>
-            <url>https://maven.aliyun.com/repository/central</url>
-        </repository>
-        <repository>
-            <id>aliyun-public</id>
-            <url>https://maven.aliyun.com/repository/public</url>
-        </repository>
-    </repositories>
-
     <distributionManagement>
         <repository>
             <id>github</id>
